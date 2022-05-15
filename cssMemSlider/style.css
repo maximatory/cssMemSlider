@@ -206,3 +206,30 @@ label:hover {
 #input-4:checked ~ .slider__text #text-1, #input-4:checked ~ .slider__text #text-2, #input-4:checked ~ .slider__text #text-3{
    display: none;
 }
+
+/*? =========================== media =========================== */
+
+@media (max-width: 768px) {
+   .slider__text {
+      grid-row-start: 5;
+      grid-row-end: 6;
+      grid-column-start: 1; 
+      grid-column-end: 4;
+      justify-self: start;
+   }
+   
+   .slider__bar {
+      grid-row-start: 4;
+      grid-row-end: 5;
+      grid-column-start: 1; 
+      grid-column-end: 4;
+      justify-self: center;
+      margin: 1em;
+   }
+}
+
+@media (max-width: 600px) {
+   .text {
+      font-size: 1.5rem;
+   }
+}
