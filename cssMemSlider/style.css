@@ -101,16 +101,16 @@ label {
 }
 
 #input-1:checked~#bar .label-1{
-   background-color: #fff;
+   background-color: rgb(166, 244, 9);
 }
 #input-2:checked~#bar .label-2{
-   background-color: #fff;
+   background-color: rgb(166, 244, 9);
 }
 #input-3:checked~#bar .label-3{
-   background-color: #fff;
+   background-color: rgb(166, 244, 9);
 }
 #input-4:checked~#bar .label-4{
-   background-color: #fff;
+   background-color: rgb(166, 244, 9);
 }
 
 label:active {
@@ -121,9 +121,6 @@ label:hover {
    opacity: 0.5;
 }
 
-.label-wrap:hover label {
-   border: 0.3em solid rgb(255, 255, 255);
-}
 
 /*? =========================== слайды =========================== */
 .img {
