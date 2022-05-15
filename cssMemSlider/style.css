@@ -75,3 +75,52 @@ body {
    display: flex;
    gap: 1em;
 }
+
+/* стилизация label */
+
+label {
+   display: block;
+   width: 3em;
+   height: 3em;
+   border-radius: 100%;
+   border: 1em solid rgb(58, 51, 51);
+   cursor: pointer;
+   background-color: #fff;
+}
+.label-wrap {
+   width: 3em;
+   height: 3em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+#input-1:checked .label-wrap {
+   background-color: rgb(12, 12, 12);
+}
+
+#input-1:checked~#bar .label-1{
+   background-color: #fff;
+}
+#input-2:checked~#bar .label-2{
+   background-color: #fff;
+}
+#input-3:checked~#bar .label-3{
+   background-color: #fff;
+}
+#input-4:checked~#bar .label-4{
+   background-color: #fff;
+}
+
+label:active {
+   background-color: rgb(255, 0, 0);
+}
+
+label:hover {
+   opacity: 0.5;
+}
+
+.label-wrap:hover label {
+   border: 0.3em solid rgb(255, 255, 255);
+}
