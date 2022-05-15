@@ -1,0 +1,232 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   background-color: rgb(58, 51, 51);
+   padding: 5em;
+}
+.slider {
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   max-width: 60em;
+   margin: 0 auto;
+}
+
+.slider__img {
+   border: 3px solid rgb(220, 132, 0);
+   border-radius: 2%;
+   display: flex;
+   max-width: 60em;
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+   grid-row-start: 1;
+   grid-row-end: 3;
+   grid-column-start: 1; 
+   grid-column-end: 4;
+   
+}
+
+.slider__text {
+   grid-row-start: 4;
+   grid-row-end: 5;
+   grid-column-start: 1; 
+   grid-column-end: 2;
+   justify-self: start;
+}
+
+.slider__bar {
+   grid-row-start: 4;
+   grid-row-end: 5;
+   grid-column-start: 3; 
+   grid-column-end: 4;
+   justify-self: end;
+}
+
+.img-1 {
+   display: block;
+}
+
+.img-2 {
+   display: none;
+}
+
+.img-3 {
+   display: none;
+}
+
+.img-4 {
+   display: none;
+}
+
+.input {
+   transform: scale(0);
+}
+
+.slider__bar {
+   display: flex;
+   gap: 1em;
+}
+
+/* стилизация label */
+
+label {
+   display: block;
+   width: 3em;
+   height: 3em;
+   border-radius: 100%;
+   border: 1em solid rgb(58, 51, 51);
+   cursor: pointer;
+   background-color: #fff;
+}
+.label-wrap {
+   width: 3em;
+   height: 3em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+#input-1:checked .label-wrap {
+   background-color: rgb(12, 12, 12);
+}
+
+#input-1:checked~#bar .label-1{
+   background-color: rgb(166, 244, 9);
+}
+#input-2:checked~#bar .label-2{
+   background-color: rgb(166, 244, 9);
+}
+#input-3:checked~#bar .label-3{
+   background-color: rgb(166, 244, 9);
+}
+#input-4:checked~#bar .label-4{
+   background-color: rgb(166, 244, 9);
+}
+
+label:active {
+   background-color: rgb(255, 0, 0);
+}
+
+label:hover {
+   opacity: 0.5;
+}
+
+
+/*? =========================== слайды =========================== */
+.img {
+   width: 100%;
+   height: 100%;
+}
+
+
+/*? =========================== смена изображений =========================== */
+/*! первый слайд */
+#input-1:checked ~ .slider__img #img-1 {
+   animation: new-slide 0.5s forwards;
+}
+#input-1:checked ~ .slider__img #img-2, #input-1:checked ~ .slider__img #img-3, #input-1:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! второй слайд */
+#input-2:checked ~ .slider__img #img-2 {
+   animation: new-slide 0.5s forwards;
+}
+#input-2:checked ~ .slider__img #img-1, #input-2:checked ~ .slider__img #img-3, #input-2:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! третий слайд */
+#input-3:checked ~ .slider__img #img-3 {
+   animation: new-slide 0.5s forwards;
+}
+#input-3:checked ~ .slider__img #img-1, #input-3:checked ~ .slider__img #img-2, #input-3:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! четвертый слайд */
+#input-4:checked ~ .slider__img #img-4 {
+   animation: new-slide 0.5s forwards;
+}
+#input-4:checked ~ .slider__img #img-1, #input-4:checked ~ .slider__img #img-2, #input-4:checked ~ .slider__img #img-3{
+   display: none;
+}
+
+@keyframes new-slide {
+   from {
+      display: block;
+      opacity: 0;
+   } 
+   to {
+      opacity: 1;
+   }
+}
+
+/*? =========================== стилизация текста =========================== */
+.text {
+   font-size: 2rem;
+   color: wheat;
+}
+/*? =========================== смена текста =========================== */
+/*! первый слайд */
+#input-1:checked ~ .slider__text #text-1 {
+   animation: new-slide 1s forwards;
+}
+#input-1:checked ~ .slider__text #text-2, #input-1:checked ~ .slider__text #text-3, #input-1:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! второй слайд */
+#input-2:checked ~ .slider__text #text-2 {
+   animation: new-slide 1s forwards;
+}
+#input-2:checked ~ .slider__text #text-1, #input-2:checked ~ .slider__text #text-3, #input-2:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! третий слайд */
+#input-3:checked ~ .slider__text #text-3 {
+   animation: new-slide 1s forwards;
+}
+#input-3:checked ~ .slider__text #text-1, #input-3:checked ~ .slider__text #text-2, #input-3:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! четвертый слайд */
+#input-4:checked ~ .slider__text #text-4 {
+   animation: new-slide 1s forwards;
+}
+#input-4:checked ~ .slider__text #text-1, #input-4:checked ~ .slider__text #text-2, #input-4:checked ~ .slider__text #text-3{
+   display: none;
+}
+
+/*? =========================== media =========================== */
+
+@media (max-width: 768px) {
+   .slider__text {
+      grid-row-start: 5;
+      grid-row-end: 6;
+      grid-column-start: 1; 
+      grid-column-end: 4;
+      justify-self: start;
+   }
+   
+   .slider__bar {
+      grid-row-start: 4;
+      grid-row-end: 5;
+      grid-column-start: 1; 
+      grid-column-end: 4;
+      justify-self: center;
+      margin: 1em;
+   }
+}
+
+@media (max-width: 600px) {
+   .text {
+      font-size: 1.5rem;
+   }
+}
