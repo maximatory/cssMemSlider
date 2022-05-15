@@ -124,3 +124,85 @@ label:hover {
 .label-wrap:hover label {
    border: 0.3em solid rgb(255, 255, 255);
 }
+
+/*? =========================== слайды =========================== */
+.img {
+   width: 100%;
+   height: 100%;
+}
+
+
+/*? =========================== смена изображений =========================== */
+/*! первый слайд */
+#input-1:checked ~ .slider__img #img-1 {
+   animation: new-slide 0.5s forwards;
+}
+#input-1:checked ~ .slider__img #img-2, #input-1:checked ~ .slider__img #img-3, #input-1:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! второй слайд */
+#input-2:checked ~ .slider__img #img-2 {
+   animation: new-slide 0.5s forwards;
+}
+#input-2:checked ~ .slider__img #img-1, #input-2:checked ~ .slider__img #img-3, #input-2:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! третий слайд */
+#input-3:checked ~ .slider__img #img-3 {
+   animation: new-slide 0.5s forwards;
+}
+#input-3:checked ~ .slider__img #img-1, #input-3:checked ~ .slider__img #img-2, #input-3:checked ~ .slider__img #img-4{
+   display: none;
+}
+/*! четвертый слайд */
+#input-4:checked ~ .slider__img #img-4 {
+   animation: new-slide 0.5s forwards;
+}
+#input-4:checked ~ .slider__img #img-1, #input-4:checked ~ .slider__img #img-2, #input-4:checked ~ .slider__img #img-3{
+   display: none;
+}
+
+@keyframes new-slide {
+   from {
+      display: block;
+      opacity: 0;
+   } 
+   to {
+      opacity: 1;
+   }
+}
+
+/*? =========================== стилизация текста =========================== */
+.text {
+   font-size: 2rem;
+   color: wheat;
+}
+/*? =========================== смена текста =========================== */
+/*! первый слайд */
+#input-1:checked ~ .slider__text #text-1 {
+   animation: new-slide 1s forwards;
+}
+#input-1:checked ~ .slider__text #text-2, #input-1:checked ~ .slider__text #text-3, #input-1:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! второй слайд */
+#input-2:checked ~ .slider__text #text-2 {
+   animation: new-slide 1s forwards;
+}
+#input-2:checked ~ .slider__text #text-1, #input-2:checked ~ .slider__text #text-3, #input-2:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! третий слайд */
+#input-3:checked ~ .slider__text #text-3 {
+   animation: new-slide 1s forwards;
+}
+#input-3:checked ~ .slider__text #text-1, #input-3:checked ~ .slider__text #text-2, #input-3:checked ~ .slider__text #text-4{
+   display: none;
+}
+/*! четвертый слайд */
+#input-4:checked ~ .slider__text #text-4 {
+   animation: new-slide 1s forwards;
+}
+#input-4:checked ~ .slider__text #text-1, #input-4:checked ~ .slider__text #text-2, #input-4:checked ~ .slider__text #text-3{
+   display: none;
+}
